@@ -1,15 +1,15 @@
 REGEDIT
-; Возможно, этот файл .REG используется программой установки.
-;   Если программа SETUP недоступна, записи, расположенные ниже, будут зарегистрированы
-;   в InitInstance автоматически с вызовом в
-;   CWinApp::RegisterShellFileTypes и COleObjectFactory::UpdateRegistryAll.
+; Р’РѕР·РјРѕР¶РЅРѕ, СЌС‚РѕС‚ С„Р°Р№Р» .REG РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РїСЂРѕРіСЂР°РјРјРѕР№ СѓСЃС‚Р°РЅРѕРІРєРё.
+;   Р•СЃР»Рё РїСЂРѕРіСЂР°РјРјР° SETUP РЅРµРґРѕСЃС‚СѓРїРЅР°, Р·Р°РїРёСЃРё, СЂР°СЃРїРѕР»РѕР¶РµРЅРЅС‹Рµ РЅРёР¶Рµ, Р±СѓРґСѓС‚ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹
+;   РІ InitInstance Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё СЃ РІС‹Р·РѕРІРѕРј РІ
+;   CWinApp::RegisterShellFileTypes Рё COleObjectFactory::UpdateRegistryAll.
 
 HKEY_CLASSES_ROOT\.lab08 = Lab08.Document
 HKEY_CLASSES_ROOT\Lab08.Document\shell\open\command = Lab08.EXE %1
 HKEY_CLASSES_ROOT\Lab08.Document\shell\open\ddeexec = [open("%1")]
 HKEY_CLASSES_ROOT\Lab08.Document\shell\open\ddeexec\application = Lab08
-    ; примечание: приложение необязательно
-    ;  (по умолчанию для имени приложения в команде)
+    ; РїСЂРёРјРµС‡Р°РЅРёРµ: РїСЂРёР»РѕР¶РµРЅРёРµ РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ
+    ;  (РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РґР»СЏ РёРјРµРЅРё РїСЂРёР»РѕР¶РµРЅРёСЏ РІ РєРѕРјР°РЅРґРµ)
 
-HKEY_CLASSES_ROOT\Lab08.Document = Документ лабараторной №8
+HKEY_CLASSES_ROOT\Lab08.Document = Р”РѕРєСѓРјРµРЅС‚ Р»Р°Р±Р°СЂР°С‚РѕСЂРЅРѕР№ в„–8
 

@@ -1,4 +1,4 @@
-// MainFrameExt.cpp: файл реализации
+// MainFrameExt.cpp: С„Р°Р№Р» СЂРµР°Р»РёР·Р°С†РёРё
 //
 
 #include "stdafx.h"
@@ -19,7 +19,7 @@ BEGIN_MESSAGE_MAP(CMainFrameExt, CWnd)
 	ON_WM_SIZE()
 END_MESSAGE_MAP()
 
-// обработчики сообщений CMainFrameExt
+// РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕРѕР±С‰РµРЅРёР№ CMainFrameExt
 
 BOOL CMainFrameExt::OnEraseBkgnd(CDC* pDC) 
 {

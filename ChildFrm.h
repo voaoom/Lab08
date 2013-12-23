@@ -1,5 +1,5 @@
 
-// ChildFrm.h : интерфейс класса CChildFrame
+// ChildFrm.h : РёРЅС‚РµСЂС„РµР№СЃ РєР»Р°СЃСЃР° CChildFrame
 //
 
 #pragma once
@@ -11,16 +11,16 @@ class CChildFrame : public CMDIChildWnd
 public:
 	CChildFrame();
 
-// Атрибуты
+// РђС‚СЂРёР±СѓС‚С‹
 public:
 
-// Операции
+// РћРїРµСЂР°С†РёРё
 public:
 
-// Переопределение
+// РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 
-// Реализация
+// Р РµР°Р»РёР·Р°С†РёСЏ
 public:
 	virtual ~CChildFrame();
 #ifdef _DEBUG
@@ -28,7 +28,7 @@ public:
 	virtual void Dump(CDumpContext& dc) const;
 #endif
 
-// Созданные функции схемы сообщений
+// РЎРѕР·РґР°РЅРЅС‹Рµ С„СѓРЅРєС†РёРё СЃС…РµРјС‹ СЃРѕРѕР±С‰РµРЅРёР№
 protected:
 	DECLARE_MESSAGE_MAP()
 

@@ -4,20 +4,20 @@
 #include  "Properties.h"
 #include "afxcmn.h"
 
-// диалоговое окно CPropertiesDlg
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ CPropertiesDlg
 
 class CPropertiesDlg : public CDialogEx
 {
 	DECLARE_DYNAMIC(CPropertiesDlg)
 
 public:
-	CPropertiesDlg(Properties * properties, CWnd* pParent = NULL);   // стандартный конструктор
+	CPropertiesDlg(Properties * properties, CWnd* pParent = NULL);   // СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	virtual ~CPropertiesDlg();
 
-	// Данные диалогового окна
+	// Р”Р°РЅРЅС‹Рµ РґРёР°Р»РѕРіРѕРІРѕРіРѕ РѕРєРЅР°
 	enum { IDD = IDD_DLG_PROP };
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // поддержка DDX/DDV
+	virtual void DoDataExchange(CDataExchange* pDX);    // РїРѕРґРґРµСЂР¶РєР° DDX/DDV
 	DECLARE_MESSAGE_MAP()
 private:
 	CListBox m_func_list;

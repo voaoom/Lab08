@@ -1,17 +1,17 @@
 
-// Lab08.h : главный файл заголовка для приложения Lab08
+// Lab08.h : РіР»Р°РІРЅС‹Р№ С„Р°Р№Р» Р·Р°РіРѕР»РѕРІРєР° РґР»СЏ РїСЂРёР»РѕР¶РµРЅРёСЏ Lab08
 //
 #pragma once
 
 #ifndef __AFXWIN_H__
-#error "включить stdafx.h до включения этого файла в PCH"
+#error "РІРєР»СЋС‡РёС‚СЊ stdafx.h РґРѕ РІРєР»СЋС‡РµРЅРёСЏ СЌС‚РѕРіРѕ С„Р°Р№Р»Р° РІ PCH"
 #endif
 
-#include "resource.h"       // основные символы
+#include "resource.h"       // РѕСЃРЅРѕРІРЅС‹Рµ СЃРёРјРІРѕР»С‹
 
 
 // CLab08App:
-// О реализации данного класса см. Lab08.cpp
+// Рћ СЂРµР°Р»РёР·Р°С†РёРё РґР°РЅРЅРѕРіРѕ РєР»Р°СЃСЃР° СЃРј. Lab08.cpp
 //
 
 class CLab08App : public CWinApp
@@ -19,12 +19,12 @@ class CLab08App : public CWinApp
 public:
 	CLab08App();
 
-	// Переопределение
+	// РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ
 public:
 	virtual BOOL InitInstance();
 	virtual int ExitInstance();
 
-	// Реализация
+	// Р РµР°Р»РёР·Р°С†РёСЏ
 	DECLARE_MESSAGE_MAP()
 };
 

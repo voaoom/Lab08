@@ -1,4 +1,4 @@
-// PropertiesDlg.cpp: файл реализации
+// PropertiesDlg.cpp: С„Р°Р№Р» СЂРµР°Р»РёР·Р°С†РёРё
 //
 #include <utility>
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "Function.h"
 #include "afxdialogex.h"
 
-// диалоговое окно CPropertiesDlg
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ CPropertiesDlg
 
 IMPLEMENT_DYNAMIC(CPropertiesDlg, CDialogEx)
 
@@ -47,8 +47,8 @@ void CPropertiesDlg::DoDataExchange(CDataExchange* pDX)
 	//
 
 	if(pDX->m_bSaveAndValidate == FALSE) {
-		updateFuncList(); // а то не отображалось при открытии окна
-		updateFuncProps(); // аналогично
+		updateFuncList(); // Р° С‚Рѕ РЅРµ РѕС‚РѕР±СЂР°Р¶Р°Р»РѕСЃСЊ РїСЂРё РѕС‚РєСЂС‹С‚РёРё РѕРєРЅР°
+		updateFuncProps(); // Р°РЅР°Р»РѕРіРёС‡РЅРѕ
 	}
 }
 
@@ -62,7 +62,7 @@ BEGIN_MESSAGE_MAP(CPropertiesDlg, CDialogEx)
 	ON_BN_CLICKED(IDOK, &CPropertiesDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
-// обработчики сообщений CPropertiesDlg
+// РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕРѕР±С‰РµРЅРёР№ CPropertiesDlg
 
 void CPropertiesDlg::OnBnClickedFuncRem()
 {
@@ -117,7 +117,7 @@ void CPropertiesDlg::updateFuncProps() {
 		tmp.Format(_T("%g"), func.c); m_func_c.SetWindowTextW(tmp); m_func_c.EnableWindow(TRUE);
 		m_color = funcs[id].second;
 		m_color_show.SetFaceColor(m_color, TRUE); m_color_show.EnableWindow(TRUE);
-		// m_func_list.SetCurSel(id); // костыль
+		// m_func_list.SetCurSel(id); // РєРѕСЃС‚С‹Р»СЊ
 	} else {
 		CString empty(_T(""));
 		m_func_a.EnableWindow(FALSE); m_func_a.SetWindowTextW(empty); 
@@ -176,32 +176,32 @@ void CPropertiesDlg::OnBnClickedOk()
 
 	if (properties->x_max <= properties->x_min) {
 		invalid = true;
-		tmp += _T("Ось X: Максимальная граница должна быть больше минимальной.\n");
+		tmp += _T("РћСЃСЊ X: РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ РіСЂР°РЅРёС†Р° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ РјРёРЅРёРјР°Р»СЊРЅРѕР№.\n");
 	}
 	if ( properties->x_grid <= 0 ) {
 		invalid = true;
-		tmp += _T("Ось X: Масштаб сетки должен быть не отрицательным.\n");
+		tmp += _T("РћСЃСЊ X: РњР°СЃС€С‚Р°Р± СЃРµС‚РєРё РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РЅРµ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј.\n");
 	}
 	double dist_x = abs(1.0 * (properties->x_max - properties->x_min) / properties->x_grid);
 	if ( dist_x < 0.001 || dist_x > 1000) {
 		invalid = true;
-		tmp += _T("Ось X: Масштаб сетки должен быть соизмерим с границами построения.\n");
+		tmp += _T("РћСЃСЊ X: РњР°СЃС€С‚Р°Р± СЃРµС‚РєРё РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ СЃРѕРёР·РјРµСЂРёРј СЃ РіСЂР°РЅРёС†Р°РјРё РїРѕСЃС‚СЂРѕРµРЅРёСЏ.\n");
 	}
 	//
 	if (properties->y_max <= properties->y_min) {
 		invalid = true;
-		tmp += _T("Ось Y: Максимальная граница должна быть больше минимальной.\n");
+		tmp += _T("РћСЃСЊ Y: РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ РіСЂР°РЅРёС†Р° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ РјРёРЅРёРјР°Р»СЊРЅРѕР№.\n");
 	}
 	if ( properties->y_grid <= 0 ) {
 		invalid = true;
-		tmp += _T("Ось Y: Масштаб сетки должен быть не отрицательным.\n");
+		tmp += _T("РћСЃСЊ Y: РњР°СЃС€С‚Р°Р± СЃРµС‚РєРё РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РЅРµ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј.\n");
 	}
 	double dist_y = abs(1.0 * (properties->y_max - properties->y_min) / properties->y_grid);
 	if ( dist_y < 0.001 || dist_y > 1000) {
 		invalid = true;
-		tmp += _T("Ось Y: Масштаб сетки должен быть соизмерим с границами построения.\n");
+		tmp += _T("РћСЃСЊ Y: РњР°СЃС€С‚Р°Р± СЃРµС‚РєРё РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ СЃРѕРёР·РјРµСЂРёРј СЃ РіСЂР°РЅРёС†Р°РјРё РїРѕСЃС‚СЂРѕРµРЅРёСЏ.\n");
 	}
 
-	if (invalid) MessageBox(tmp, _T("Что-то не так!"), MB_ICONERROR );
+	if (invalid) MessageBox(tmp, _T("Р§С‚Рѕ-С‚Рѕ РЅРµ С‚Р°Рє!"), MB_ICONERROR );
 	else CDialogEx::OnOK();
 }

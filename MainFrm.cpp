@@ -1,5 +1,5 @@
 
-// MainFrm.cpp : реализация класса CMainFrame
+// MainFrm.cpp : СЂРµР°Р»РёР·Р°С†РёСЏ РєР»Р°СЃСЃР° CMainFrame
 //
 
 #include "stdafx.h"
@@ -21,14 +21,14 @@ IMPLEMENT_DYNAMIC(CMainFrame, CMDIFrameWnd)
 
 	static UINT indicators[] =
 	{
-		ID_SEPARATOR,           // индикатор строки состояния
+		ID_SEPARATOR,           // РёРЅРґРёРєР°С‚РѕСЂ СЃС‚СЂРѕРєРё СЃРѕСЃС‚РѕСЏРЅРёСЏ
 		ID_INDICATOR_CAPS,
 		ID_INDICATOR_NUM,
 		ID_INDICATOR_SCRL,
 		ID_INDICATOR_KANA
 	};
 
-	// создание/уничтожение CMainFrame
+	// СЃРѕР·РґР°РЅРёРµ/СѓРЅРёС‡С‚РѕР¶РµРЅРёРµ CMainFrame
 
 	CMainFrame::CMainFrame() {}
 
@@ -43,8 +43,8 @@ IMPLEMENT_DYNAMIC(CMainFrame, CMDIFrameWnd)
 
 		if (!m_wndStatusBar.Create(this))
 		{
-			TRACE0("Не удалось создать строку состояния\n");
-			return -1;      // не удалось создать
+			TRACE0("РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ СЃС‚СЂРѕРєСѓ СЃРѕСЃС‚РѕСЏРЅРёСЏ\n");
+			return -1;      // РЅРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ
 		}
 		//m_wndStatusBar.SetIndicators(indicators, sizeof(indicators)/sizeof(UINT));
 
@@ -55,13 +55,13 @@ IMPLEMENT_DYNAMIC(CMainFrame, CMDIFrameWnd)
 	{
 		if( !CMDIFrameWnd::PreCreateWindow(cs) )
 			return FALSE;
-		// TODO: изменить класс Window или стили посредством изменения
+		// TODO: РёР·РјРµРЅРёС‚СЊ РєР»Р°СЃСЃ Window РёР»Рё СЃС‚РёР»Рё РїРѕСЃСЂРµРґСЃС‚РІРѕРј РёР·РјРµРЅРµРЅРёСЏ
 		//  CREATESTRUCT cs
 
 		return TRUE;
 	}
 
-	// диагностика CMainFrame
+	// РґРёР°РіРЅРѕСЃС‚РёРєР° CMainFrame
 
 #ifdef _DEBUG
 	void CMainFrame::AssertValid() const
@@ -76,4 +76,4 @@ IMPLEMENT_DYNAMIC(CMainFrame, CMDIFrameWnd)
 #endif //_DEBUG
 
 
-	// обработчики сообщений CMainFrame
+	// РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕРѕР±С‰РµРЅРёР№ CMainFrame

@@ -1,5 +1,5 @@
 
-// Lab08View.h : интерфейс класса CLab08View
+// Lab08View.h : РёРЅС‚РµСЂС„РµР№СЃ РєР»Р°СЃСЃР° CLab08View
 //
 
 #pragma once
@@ -7,24 +7,24 @@
 
 class CLab08View : public CView
 {
-protected: // создать только из сериализации
+protected: // СЃРѕР·РґР°С‚СЊ С‚РѕР»СЊРєРѕ РёР· СЃРµСЂРёР°Р»РёР·Р°С†РёРё
 	CLab08View();
 	DECLARE_DYNCREATE(CLab08View)
 
-// Атрибуты
+// РђС‚СЂРёР±СѓС‚С‹
 public:
 	CLab08Doc* GetDocument() const;
 
-// Операции
+// РћРїРµСЂР°С†РёРё
 public:
 
-// Переопределение
+// РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ
 public:
-	virtual void OnDraw(CDC* pDC);  // переопределено для отрисовки этого представления
+	virtual void OnDraw(CDC* pDC);  // РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅРѕ РґР»СЏ РѕС‚СЂРёСЃРѕРІРєРё СЌС‚РѕРіРѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 protected:
 
-// Реализация
+// Р РµР°Р»РёР·Р°С†РёСЏ
 public:
 	virtual ~CLab08View();
 #ifdef _DEBUG
@@ -34,7 +34,7 @@ public:
 
 protected:
 
-// Созданные функции схемы сообщений
+// РЎРѕР·РґР°РЅРЅС‹Рµ С„СѓРЅРєС†РёРё СЃС…РµРјС‹ СЃРѕРѕР±С‰РµРЅРёР№
 protected:
 	DECLARE_MESSAGE_MAP()
 
@@ -52,7 +52,7 @@ public:
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 };
 
-#ifndef _DEBUG  // отладочная версия в Lab08View.cpp
+#ifndef _DEBUG  // РѕС‚Р»Р°РґРѕС‡РЅР°СЏ РІРµСЂСЃРёСЏ РІ Lab08View.cpp
 inline CLab08Doc* CLab08View::GetDocument() const
    { return reinterpret_cast<CLab08Doc*>(m_pDocument); }
 #endif

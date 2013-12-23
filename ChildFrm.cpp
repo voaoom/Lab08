@@ -1,5 +1,5 @@
 
-// ChildFrm.cpp : реализация класса CChildFrame
+// ChildFrm.cpp : СЂРµР°Р»РёР·Р°С†РёСЏ РєР»Р°СЃСЃР° CChildFrame
 //
 
 #include "stdafx.h"
@@ -18,11 +18,11 @@ IMPLEMENT_DYNCREATE(CChildFrame, CMDIChildWnd)
 BEGIN_MESSAGE_MAP(CChildFrame, CMDIChildWnd)
 END_MESSAGE_MAP()
 
-// создание/уничтожение CChildFrame
+// СЃРѕР·РґР°РЅРёРµ/СѓРЅРёС‡С‚РѕР¶РµРЅРёРµ CChildFrame
 
 CChildFrame::CChildFrame()
 {
-	// TODO: добавьте код инициализации члена
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё С‡Р»РµРЅР°
 }
 
 CChildFrame::~CChildFrame()
@@ -32,14 +32,14 @@ CChildFrame::~CChildFrame()
 
 BOOL CChildFrame::PreCreateWindow(CREATESTRUCT& cs)
 {
-	// TODO:  измените класс Window или стили посредством изменения CREATESTRUCT cs
+	// TODO:  РёР·РјРµРЅРёС‚Рµ РєР»Р°СЃСЃ Window РёР»Рё СЃС‚РёР»Рё РїРѕСЃСЂРµРґСЃС‚РІРѕРј РёР·РјРµРЅРµРЅРёСЏ CREATESTRUCT cs
 	if( !CMDIChildWnd::PreCreateWindow(cs) )
 		return FALSE;
 
 	return TRUE;
 }
 
-// диагностика CChildFrame
+// РґРёР°РіРЅРѕСЃС‚РёРєР° CChildFrame
 
 #ifdef _DEBUG
 void CChildFrame::AssertValid() const
@@ -53,4 +53,4 @@ void CChildFrame::Dump(CDumpContext& dc) const
 }
 #endif //_DEBUG
 
-// обработчики сообщений CChildFrame
+// РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕРѕР±С‰РµРЅРёР№ CChildFrame

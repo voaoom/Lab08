@@ -1,10 +1,10 @@
 
-// Lab08View.cpp : реализация класса CLab08View
+// Lab08View.cpp : СЂРµР°Р»РёР·Р°С†РёСЏ РєР»Р°СЃСЃР° CLab08View
 //
 
 #include "stdafx.h"
-// SHARED_HANDLERS можно определить в обработчиках фильтров просмотра реализации проекта ATL, эскизов
-// и поиска; позволяет совместно использовать код документа в данным проекте.
+// SHARED_HANDLERS РјРѕР¶РЅРѕ РѕРїСЂРµРґРµР»РёС‚СЊ РІ РѕР±СЂР°Р±РѕС‚С‡РёРєР°С… С„РёР»СЊС‚СЂРѕРІ РїСЂРѕСЃРјРѕС‚СЂР° СЂРµР°Р»РёР·Р°С†РёРё РїСЂРѕРµРєС‚Р° ATL, СЌСЃРєРёР·РѕРІ
+// Рё РїРѕРёСЃРєР°; РїРѕР·РІРѕР»СЏРµС‚ СЃРѕРІРјРµСЃС‚РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєРѕРґ РґРѕРєСѓРјРµРЅС‚Р° РІ РґР°РЅРЅС‹Рј РїСЂРѕРµРєС‚Рµ.
 #ifndef SHARED_HANDLERS
 #include "Lab08.h"
 #endif
@@ -23,7 +23,7 @@
 IMPLEMENT_DYNCREATE(CLab08View, CView)
 
 BEGIN_MESSAGE_MAP(CLab08View, CView)
-	// Стандартные команды печати
+	// РЎС‚Р°РЅРґР°СЂС‚РЅС‹Рµ РєРѕРјР°РЅРґС‹ РїРµС‡Р°С‚Рё
 	//ON_COMMAND(ID_FILE_PRINT, &CView::OnFilePrint)
 	//ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
 	//ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
@@ -32,7 +32,7 @@ BEGIN_MESSAGE_MAP(CLab08View, CView)
 	ON_WM_ERASEBKGND()
 END_MESSAGE_MAP()
 
-// создание/уничтожение CLab08View
+// СЃРѕР·РґР°РЅРёРµ/СѓРЅРёС‡С‚РѕР¶РµРЅРёРµ CLab08View
 
 CLab08View::CLab08View() {}
 
@@ -40,13 +40,13 @@ CLab08View::~CLab08View() {}
 
 BOOL CLab08View::PreCreateWindow(CREATESTRUCT& cs)
 {
-	// TODO: изменить класс Window или стили посредством изменения
+	// TODO: РёР·РјРµРЅРёС‚СЊ РєР»Р°СЃСЃ Window РёР»Рё СЃС‚РёР»Рё РїРѕСЃСЂРµРґСЃС‚РІРѕРј РёР·РјРµРЅРµРЅРёСЏ
 	//  CREATESTRUCT cs
 
 	return CView::PreCreateWindow(cs);
 }
 
-// рисование CLab08View
+// СЂРёСЃРѕРІР°РЅРёРµ CLab08View
 
 void CLab08View::OnDraw(CDC* _pDC)
 {
@@ -57,12 +57,12 @@ void CLab08View::OnDraw(CDC* _pDC)
 	CRect size;
 	_pDC->GetWindow()->GetClientRect(&size);
 
-	// Супер костыли
+	// РЎСѓРїРµСЂ РєРѕСЃС‚С‹Р»Рё
 	CMemDC dc(*_pDC, _pDC->GetWindow());
 	CDC * pDC = &dc.GetDC();
-	// Крутая штука, почему я раньше её не юзал
+	// РљСЂСѓС‚Р°СЏ С€С‚СѓРєР°, РїРѕС‡РµРјСѓ СЏ СЂР°РЅСЊС€Рµ РµС‘ РЅРµ СЋР·Р°Р»
 
-	// Чистим фон
+	// Р§РёСЃС‚РёРј С„РѕРЅ
 	CBrush bgBrush(_pDC->GetBkColor());
 	pDC->FillRect(size, &bgBrush);
 
@@ -77,13 +77,13 @@ void CLab08View::OnDraw(CDC* _pDC)
 	auto & props = pDoc->properties;
 	auto & funcs = pDoc->properties.functions;
 
-	// Начало координат в пикселях. Может не попадать в область видимости
+	// РќР°С‡Р°Р»Рѕ РєРѕРѕСЂРґРёРЅР°С‚ РІ РїРёРєСЃРµР»СЏС…. РњРѕР¶РµС‚ РЅРµ РїРѕРїР°РґР°С‚СЊ РІ РѕР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё
 	LONG center_x = t_dim_to_pixel_x(size, 0.0);
 	LONG center_y = t_dim_to_pixel_y(size, 0.0);
 
 	pDC->SetBkMode(TRANSPARENT);
 
-	// Рисуем вспомогательную сетку
+	// Р РёСЃСѓРµРј РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅСѓСЋ СЃРµС‚РєСѓ
 	CPen penGird(PS_DOT, 1, COLORREF(0x7f7f7f));
 	pDC->SelectObject(&penGird);
 	pDC->SetTextColor(COLORREF(0x7f7f7f));
@@ -104,26 +104,26 @@ void CLab08View::OnDraw(CDC* _pDC)
 		}
 	}
 
-	// Рисуем оси, если это имеет смысл
+	// Р РёСЃСѓРµРј РѕСЃРё, РµСЃР»Рё СЌС‚Рѕ РёРјРµРµС‚ СЃРјС‹СЃР»
 	CPen penAxis(PS_SOLID, 2, COLORREF(0x000000));
 	pDC->SelectObject(&penAxis);
 	pDC->SetTextColor(0);
 	if ( size.left <= center_x && center_x <= size.right ) {
 		pDC->MoveTo(center_x, size.bottom - 5); pDC->LineTo(center_x, size.top + 5);
-		// стрелочка
+		// СЃС‚СЂРµР»РѕС‡РєР°
 		pDC->MoveTo(center_x - 5, size.top + 10);
 		pDC->LineTo(center_x, size.top + 5);
 		pDC->LineTo(center_x + 5, size.top + 10);
-		// Буковка
+		// Р‘СѓРєРѕРІРєР°
 		pDC->TextOut(center_x + 5, size.top + 10, _T("Y"));
 	}
 	if ( size.top <= center_y && center_y <= size.bottom ) {
 		pDC->MoveTo(size.left + 5, center_y); pDC->LineTo(size.right - 5, center_y);
-		// стрелочка
+		// СЃС‚СЂРµР»РѕС‡РєР°
 		pDC->MoveTo(size.right - 10, center_y - 5);
 		pDC->LineTo(size.right - 5, center_y);
 		pDC->LineTo(size.right - 10, center_y + 5);
-		// Буковка
+		// Р‘СѓРєРѕРІРєР°
 		pDC->TextOut(size.right - 15, center_y + 5, _T("X"));
 	}
 	if ( size.left <= center_x && center_x <= size.right && 
@@ -131,7 +131,7 @@ void CLab08View::OnDraw(CDC* _pDC)
 		pDC->TextOut(center_x + 1, center_y + 1, _T("(0;0)"));
 	}
 
-	// координаты в углах
+	// РєРѕРѕСЂРґРёРЅР°С‚С‹ РІ СѓРіР»Р°С…
 	{
 		CString tmp;
 
@@ -149,7 +149,7 @@ void CLab08View::OnDraw(CDC* _pDC)
 			t_dim_to_pixel_y(size, gird_ry), tmp);
 	}
 
-	// Рисование графиков
+	// Р РёСЃРѕРІР°РЅРёРµ РіСЂР°С„РёРєРѕРІ
 	for(int ii = 0; ii < funcs.size(); ++ii) {
 		CPen penFunc(PS_SOLID, 1, funcs[ii].second);
 		pDC->SelectObject(&penFunc);
@@ -220,7 +220,7 @@ int CLab08View::t_dim_to_pixel_y(CRect & sz, double y) {
 
 // /voaoom
 
-// диагностика CLab08View
+// РґРёР°РіРЅРѕСЃС‚РёРєР° CLab08View
 
 #ifdef _DEBUG
 void CLab08View::AssertValid() const
@@ -233,7 +233,7 @@ void CLab08View::Dump(CDumpContext& dc) const
 	CView::Dump(dc);
 }
 
-CLab08Doc* CLab08View::GetDocument() const // встроена неотлаженная версия
+CLab08Doc* CLab08View::GetDocument() const // РІСЃС‚СЂРѕРµРЅР° РЅРµРѕС‚Р»Р°Р¶РµРЅРЅР°СЏ РІРµСЂСЃРёСЏ
 {
 	ASSERT(m_pDocument->IsKindOf(RUNTIME_CLASS(CLab08Doc)));
 	return (CLab08Doc*)m_pDocument;
@@ -241,7 +241,7 @@ CLab08Doc* CLab08View::GetDocument() const // встроена неотлаженная версия
 #endif //_DEBUG
 
 
-// обработчики сообщений CLab08View
+// РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕРѕР±С‰РµРЅРёР№ CLab08View
 
 
 BOOL CLab08View::OnEraseBkgnd(CDC* /*pDC*/)

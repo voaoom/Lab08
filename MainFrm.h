@@ -1,5 +1,5 @@
 
-// MainFrm.h : интерфейс класса CMainFrame
+// MainFrm.h : РёРЅС‚РµСЂС„РµР№СЃ РєР»Р°СЃСЃР° CMainFrame
 //
 
 #pragma once
@@ -11,18 +11,18 @@ class CMainFrame : public CMDIFrameWnd
 public:
 	CMainFrame();
 
-// Атрибуты
+// РђС‚СЂРёР±СѓС‚С‹
 public:
 	CMainFrameExt m_extension;
 
-// Операции
+// РћРїРµСЂР°С†РёРё
 public:
 
-// Переопределение
+// РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ
 public:
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 
-// Реализация
+// Р РµР°Р»РёР·Р°С†РёСЏ
 public:
 	virtual ~CMainFrame();
 #ifdef _DEBUG
@@ -30,11 +30,11 @@ public:
 	virtual void Dump(CDumpContext& dc) const;
 #endif
 
-protected:  // встроенные члены панели элементов управления
+protected:  // РІСЃС‚СЂРѕРµРЅРЅС‹Рµ С‡Р»РµРЅС‹ РїР°РЅРµР»Рё СЌР»РµРјРµРЅС‚РѕРІ СѓРїСЂР°РІР»РµРЅРёСЏ
 	CToolBar          m_wndToolBar;
 	CStatusBar        m_wndStatusBar;
 
-// Созданные функции схемы сообщений
+// РЎРѕР·РґР°РЅРЅС‹Рµ С„СѓРЅРєС†РёРё СЃС…РµРјС‹ СЃРѕРѕР±С‰РµРЅРёР№
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	DECLARE_MESSAGE_MAP()
